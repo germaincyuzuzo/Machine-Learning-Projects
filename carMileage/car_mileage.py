@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import matplotlib.pyplot as plt
 
+
+#Loading data
 column_names = ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model_year', 'origin', 'car_name']
 data = pd.read_csv('auto-mpg.data', delim_whitespace=True, names=column_names, na_values='?')
 
@@ -25,13 +27,13 @@ y_pred_lin = lin_reg.predict(X_test)
 
 
 #Train Ridge Regression
-ridge_reg = Ridge(alpha=1.0)
+ridge_reg = Ridge(alpha=5)
 ridge_reg.fit(X_train, y_train)
 y_pred_ridge = ridge_reg.predict(X_test)
 
 
 #Train Lasso Regression
-lasso_reg = Lasso(alpha=0.1)
+lasso_reg = Lasso(alpha=7)
 lasso_reg.fit(X_train, y_train)
 y_pred_lasso = lasso_reg.predict(X_test)
 
